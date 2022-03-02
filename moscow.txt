@@ -1,20 +1,20 @@
 Must Have:
-MPWA-3 User story: As a user I want to add my name so that I know who is adding recipes
-MPWA-4 User story: As a user I want to be able to add a recipe name so that a recipe can be identified by it's name
-MPWA-8 User story: As a user I want to be able to read all my recipes so that I can see what is on my recipe library
-MPWA-9 User story: As a user I want to be able to update the name of a recipe so that I can alter it if I want
-MPWA-15 User story: As a user I want to delete a recipe so that I can remove it from a recipe list
+(5) MPWA-3 User story: As a user I want to add my name so that I know who is adding recipes
+(5) MPWA-4 User story: As a user I want to be able to add a recipe name so that a recipe can be identified by it's name
+(13) MPWA-8 User story: As a user I want to be able to read all my recipes so that I can see what is on my recipe library
+(8) MPWA-9 User story: As a user I want to be able to update the name of a recipe so that I can alter it if I want
+(8) MPWA-15 User story: As a user I want to delete a recipe so that I can remove it from a recipe list
 
 Should Have:
 
 Could Have:
-MPWA-5 User story: As a user I want to be able to add ingredients to a recipe so that recipe can have ingredients
-MPWA-7 User story: As a user I want to be able to input the number of servings in a recipe so that I know this information about a recipe
-MPWA-10 User story: As a user I want to be able to update the name of a recipe so that I can alter it if I want
-MPWA-11 User story: As a user I want to be able to read all the ingredients within a recipe so that I can see what the ingredients for a recipe are
-MPWA-12 User story: As a user I want to be able to add cooking instructions to a recipe so that a recipe can be cooked following instructions
-MPWA-16 User story: As a user I want to delete an ingredient so that I can remove it from my recipe
-MPWA-13 User story: As a user I want to be able to randomly pick a number of recipes so that I can create a meal plan
+(5) MPWA-5 User story: As a user I want to be able to add ingredients to a recipe so that recipe can have ingredients
+(5) MPWA-7 User story: As a user I want to be able to input the number of servings in a recipe so that I know this information about a recipe
+(8) MPWA-10 User story: As a user I want to be able to update the name of a recipe so that I can alter it if I want
+(13) MPWA-11 User story: As a user I want to be able to read all the ingredients within a recipe so that I can see what the ingredients for a recipe are
+(5) MPWA-12 User story: As a user I want to be able to add cooking instructions to a recipe so that a recipe can be cooked following instructions
+(8) MPWA-16 User story: As a user I want to delete an ingredient so that I can remove it from my recipe
+(8) MPWA-13 User story: As a user I want to be able to randomly pick a number of recipes so that I can create a meal plan
 
 Won't Have:
 MPWA-14 User story: As a user I want to be able to read the recipes that are randomly picked so that I can see the meal plan
