@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Welcome to M.E.A.L.</title>
+    </head>
+    <body>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.user_name.label }} {{ form.user_name }}
+                <br>
+                {{ form.submit_name }}
+                <br>
+            {{ message }}
+            </form>
+        </div>
+    </body>
+</html>
