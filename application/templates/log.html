@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>Recipe Log</title>
+    </head>
+    <body>
+        <h3>Here is a list of all your recipes:</h3>
+                {% for recipes in recipes %}
+                <p>{{ recipe.recipe_name }} - Added by: {{ recipe.user_name }}</p>
+                {% endfor %}
+    </body>
+</html>
