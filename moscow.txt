@@ -1,6 +1,6 @@
 Must Have:
-(5) MPWA-3 User story: As a user I want to add my name so that I know who is adding recipes
-(5) MPWA-4 User story: As a user I want to be able to add a recipe name so that a recipe can be identified by it's name
+(8) MPWA-3 User story: As a user I want to add my name so that I know who is adding recipes
+(8) MPWA-4 User story: As a user I want to be able to add a recipe name so that a recipe can be identified by it's name
 (13) MPWA-8 User story: As a user I want to be able to read all my recipes so that I can see what is on my recipe library
 (8) MPWA-9 User story: As a user I want to be able to update the name of a recipe so that I can alter it if I want
 (8) MPWA-15 User story: As a user I want to delete a recipe so that I can remove it from a recipe list
