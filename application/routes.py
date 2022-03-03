@@ -1,6 +1,7 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask
+from application import app
 
 @app.route('/')
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/home')
 def home():
     return 'Welcome to M.E.A.L.'
