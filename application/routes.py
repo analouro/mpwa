@@ -1,6 +1,6 @@
 from crypt import methods
 from flask import Flask, render_template, request
-from application import app
+from application import app, db
 from application.forms import RecipeForm, UserForm
 from application.models import User, Recipe
 
@@ -8,32 +8,37 @@ from application.models import User, Recipe
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     message = ""
-    form = UserForm()
+    userform = UserForm()
 
     if request.method == 'POST':
-        user_name = form.user_name.data
+        user_name = userform.user_name.data
         
         if len(user_name) == 0:
             message = "Please add a username to continue"
         else:
             message = f'Welcome {user_name}'
     
-    return render_template('home.html', form=form, message=message)
+    return render_template('home.html', form=userform, message=message)
 
 @app.route('/recipe', methods=['GET', 'POST'])
 def recipe():
-    message = ""
-    form = RecipeForm()
+    # message = ""
+    recipeform = RecipeForm()
 
-    if request.method == 'POST':
-        recipe_name = form.recipe_name.data
+    if recipeform.validate_on_submit():
+        recipe_name = Recipe(recipe_name=recipeform.recipe_name.data)
+        db.session.add(recipe_name)
+        db.session.commit()
+        # if a recipe is added successfully, the user is redirected to the recipe log
+        return render_template('log.html', form=recipeform)
 
-        if len(recipe_name) == 0:
-            message = "Please add a new recipe to continue"
-        else:
-            message = f'{recipe_name} was added to your recipe log'
-    
-    return render_template('recipe.html', form=form, message=message)
+        # if len(recipe_name) == 0:
+        #     message = "Please add a new recipe to continue"
+        # else:
+        #     message = f'{recipe_name} was added to your recipe log'
+
+    #if a recipe isn't added successfully, refresh the recipe page
+    return render_template('recipe.html', form=recipeform), #message=message)
 
 @app.route('/log')
 def log():
