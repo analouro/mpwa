@@ -7,7 +7,7 @@ from application.models import Recipe
 
 # class to enter username
 class UserForm(FlaskForm):
-    user_name = StringField('Enter Username')
+    user_name = StringField('Enter Username', validators=[DataRequired(), Length(min=1,max=50)])
     submit_name = SubmitField('Add Username')
 
 # class to enter recipe name

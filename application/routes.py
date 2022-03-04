@@ -1,5 +1,6 @@
 from crypt import methods
-from flask import Flask, render_template, request
+from email import message
+from flask import Flask, redirect, render_template, request, url_for
 from application import app, db
 from application.forms import RecipeForm, UserForm
 from application.models import User, Recipe
@@ -10,14 +11,18 @@ def home():
     message = ""
     userform = UserForm()
 
-    if request.method == 'POST':
-        user_name = userform.user_name.data
+    if userform.validate_on_submit():
+        user_name = User(user_name=userform.user_name.data)
+        db.session.add(user_name)
+        db.session.commit()
+        #if validation is successful, redirect to /recipe
+        # return redirect(url_for('recipe'))
+        return f"Welcome {user_name}"
         
-        if len(user_name) == 0:
-            message = "Please add a username to continue"
-        else:
-            message = f'Welcome {user_name}'
-    
+        # if len(user_name) == 0:
+        #     message = "Please add a username to continue"
+
+    # if validation isn't successful, redirect back to /home    
     return render_template('home.html', form=userform, message=message)
 
 @app.route('/recipe', methods=['GET', 'POST'])
