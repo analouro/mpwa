@@ -4,7 +4,7 @@
    <p>
        {% for user in user_name %}
        {{ user.user_name }} <br>
-       <button><a href="{{ url_for('home') }}">Add new recipe</a></button> 
+       <button><a href="{{ url_for('recipes') }}">Add new recipe</a></button> 
        <br>
        <br>
        {% endfor %}

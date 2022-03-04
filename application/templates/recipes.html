@@ -1,11 +1,14 @@
-<html>
-    <head>
-        <title>Recipe Log</title>
-    </head>
-    <body>
-        <h3>Here is a list of all your recipes:</h3>
-                {% for recipes in recipes %}
-                <p>{{ recipe.recipe_name }} - Added by: {{ recipe.user_name }}</p>
-                {% endfor %}
-    </body>
-</html>
+{% extends 'layout.html' %}
+{% block body %}
+    <h2>New Recipes</h2>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.recipe_name.label }} {{ form.recipe_name }} {{ form.submit_recipe }}
+                <br>
+            </form>
+            <br>
+            <br>
+            <!-- <button><a href="{{ url_for('recipes') }}">Click here if you already have a username</a></button> -->
+        </div>
+{% endblock body %}

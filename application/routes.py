@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, redirect, render_template, request, url_for
 from application import app, db
 from application.forms import RecipeForm, UserForm
@@ -18,7 +19,22 @@ def home():
     #if the username isn't validated, return to home      
     return render_template('home.html', form=userform)
 
+
 @app.route('/users', methods=['GET'])
 def users():
     user_name = User.query.all()
     return render_template('users.html', user_name=user_name )
+
+
+@app.route('/recipes', methods=['GET', 'POST'])
+def recipes():
+    recipeform = RecipeForm()
+
+    if request.method == 'POST':
+        if recipeform.validate_on_submit():
+            recipe_name = Recipe(recipe_name=recipeform.recipe_name.data)
+            db.session.add(recipe_name)
+            db.session.commit()
+            return redirect(url_for('users'))
+
+    return render_template('recipes.html', form=recipeform)
