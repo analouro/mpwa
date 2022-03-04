@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>New Recipe</title>
+    </head>
+    <body>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.recipe_name.label }} {{ form.recipe_name }}
+                <br>
+                {{ form.submit_recipe }}
+                <br>
+            {{ message }}
+            </form>
+        </div>
+    </body>
+</html>
