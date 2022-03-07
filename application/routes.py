@@ -53,8 +53,16 @@ def update(recipe):
     else:
         if recipe_form.validate_on_submit():
             recipe.name = recipe_form.name.data
+            db.session.add()
             db.session.commit()
             return redirect(url_for('read'))
+
+@app.route('/delete/<recipe>', methods=['GET', 'POST'])
+def delete(recipe):
+    recipe = Recipe.query.filter_by(name=recipe).first()
+    db.session.delete(recipe)
+    db.session.commit()
+    return redirect(url_for('read'))
     
 
 
