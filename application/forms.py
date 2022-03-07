@@ -16,4 +16,3 @@ class RecipeForm(FlaskForm):
     name = StringField('Add Recipe:', validators=[DataRequired(), Length(min=2,max=100)])
     recipe_user = SelectField ('Pick a user:', choices=[],validators=[DataRequired()])
     submit = SubmitField('Submit')
-

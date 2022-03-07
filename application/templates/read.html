@@ -6,6 +6,7 @@
        <br>
        Recipe: {{ recipe.name }}  <br>
        <br> Registered by: {{ recipe.user.name }}
+       <button><span><a href="{{ url_for('update', recipe=recipe.name) }}">Update</a></span></button>
        <br>
        ---
        <br>
