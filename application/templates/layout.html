@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>M.E.A.L.</title>
+    </head>
+        <body style ="text-align: center">
+            <h2>Welcome to M.E.A.L.</h2>
+            <h4>make eating about love</h4>
+            <h3>The best meal planning app!</h3>
+            <button><span><a href="{{ url_for('user') }}">Create user</a></span></button>
+            <button><span><a href="{{ url_for('recipe') }}">Create recipe</a></span></button>
+            <button><span><a href="{{ url_for('read') }}">See all user and recipe</a></span></button>
+            <h3>***</h3>
+        {% block body %}{% endblock body %}
+    </body>
+</html>

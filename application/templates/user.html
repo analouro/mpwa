@@ -3,18 +3,14 @@
         <div class='form'>
             <form method='POST' action=''>
                 {{ form.hidden_tag() }}
-                {{ form.name.label }} 
-                {{ form.name }} 
+                {{ form.name.label }} {{ form.name }} 
                 <p></p>
                 <br>
-                {{ form.recipe_user.label }} 
-                {{ form.recipe_user }}
-                <p></p>
                 <br>
                 {{ form.submit }}
                 <br>
             </form>
             <br>
-            
+            <br>
         </div>
 {% endblock body %}

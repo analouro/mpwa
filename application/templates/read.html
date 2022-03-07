@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block body %}
+   <h2>List of users and recipes:</h2>
+       <br>
+       {% for recipe in recipes %}
+       <br>
+       Recipe: {{ recipe.name }}  <br>
+       <br> Registered by: {{ recipe.user.name }}
+       <p></p>
+       <button><span><a href="{{ url_for('update', recipe=recipe.name) }}">Update</a></span></button>
+       <button><span><a href="{{ url_for('delete', recipe=recipe.name) }}">Delete</a></span></button>
+       <br>
+       ---
+       <br>
+       {% endfor %}
+       <br>
+   </p>
+{% endblock body %}
