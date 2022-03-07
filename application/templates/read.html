@@ -1,13 +1,14 @@
 {% extends 'layout.html' %}
 {% block body %}
    <h2>List of users and recipes:</h2>
-   <p>
-       {% for user in users %}
-       {{ user.user_name }}
-       {% endfor %} 
        <br>
        {% for recipe in recipes %}
-       {{ recipe.recipe_name }}
+       <br>
+       Recipe: {{ recipe.name }}  <br>
+       <br> Registered by: {{ recipe.user.name }}
+       <br>
+       ---
+       <br>
        {% endfor %}
        <br>
    </p>
