@@ -1,7 +1,7 @@
 from os import name
 from flask import redirect, render_template, request, url_for
 from application import app, db
-from application.forms import UserForm, RecipeForm
+from application.forms import UserForm, RecipeForm, UpdateForm
 from application.models import User, Recipe
 
 @app.route('/', methods=['GET'])
@@ -17,7 +17,7 @@ def user():
         newuser = User(name=user_form.name.data)
         db.session.add(newuser)
         db.session.commit()
-        return redirect(url_for('read'))
+        return redirect(url_for('recipe'))
     return render_template('user.html', form=user_form)
 
 @app.route('/recipe', methods=['GET', 'POST'])
@@ -43,17 +43,16 @@ def read():
 
 @app.route('/update/<recipe>', methods=['GET', 'POST'])
 def update(recipe):
-    recipe_form = RecipeForm()
+    update_form = UpdateForm()
     recipe = Recipe.query.filter_by(name=recipe).first()
 
     if request.method == 'GET':
-        recipe_form.name.data = recipe.name
-        return render_template('update.html', form=recipe_form)
+        update_form.name.data = recipe.name
+        return render_template('update.html', form=update_form)
     
     else:
-        if recipe_form.validate_on_submit():
-            recipe.name = recipe_form.name.data
-            db.session.add()
+        if update_form.validate_on_submit():
+            recipe.name = update_form.name.data
             db.session.commit()
             return redirect(url_for('read'))
 
