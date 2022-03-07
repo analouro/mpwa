@@ -3,11 +3,16 @@
         <div class='form'>
             <form method='POST' action=''>
                 {{ form.hidden_tag() }}
-                {{ form.user_name.label }} {{ form.user_name }} {{ form.submit_name }}
+                {{ form.user_name.label }} {{ form.user_name }} 
+                <p></p>
+                {{ form.recipe_name.label }} {{ form.recipe_name }}
+                <br>
+                <br>
+                {{ form.submit }}
                 <br>
             </form>
             <br>
             <br>
-            <button><a href="{{ url_for('users') }}">Click here if you already have a username</a></button>
+            <button><a href="{{ url_for('read') }}">Click here if you already have a username</a></button>
         </div>
 {% endblock body %}

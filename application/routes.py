@@ -1,40 +1,29 @@
 from crypt import methods
+from tokenize import Name
 from flask import Flask, redirect, render_template, request, url_for
 from application import app, db
-from application.forms import RecipeForm, UserForm
+from application.forms import UserForm
 from application.models import User, Recipe
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-    userform = UserForm()
+    form = UserForm()
 
     if request.method == 'POST':
-        if userform.validate_on_submit():
-            user_name = User(user_name=userform.user_name.data)
-            db.session.add(user_name)
-            db.session.commit()
-            return redirect(url_for('users'))
+        user = form.user_name.data
+        recipe = form.recipe_name.data
 
-    #if the username isn't validated, return to home      
-    return render_template('home.html', form=userform)
+        new = User(user_name=user, recipe_name=recipe)
+        db.session.add(new)
+        db.session.commit()
+        return redirect(url_for('read'))
+    
+    return render_template('home.html', form=form)
 
+@app.route('/read', methods=['GET'])
+def read():
+    users = User.query.all()
+    recipes = User.query.all()
 
-@app.route('/users', methods=['GET'])
-def users():
-    user_name = User.query.all()
-    return render_template('users.html', user_name=user_name )
-
-
-@app.route('/recipes', methods=['GET', 'POST'])
-def recipes():
-    recipeform = RecipeForm()
-
-    if request.method == 'POST':
-        if recipeform.validate_on_submit():
-            recipe_name = Recipe(recipe_name=recipeform.recipe_name.data)
-            db.session.add(recipe_name)
-            db.session.commit()
-            return redirect(url_for('users'))
-
-    return render_template('recipes.html', form=recipeform)
+    return render_template('read.html', users=users, recipes=recipes)
