@@ -13,14 +13,14 @@ class TestBase(TestCase):
         return app
 
     def setUp(self):
+        db.session.commit()
+        db.drop_all()
         db.create_all()
+
         user1 = User(name="MsTest")
-        user2 = User(name="MrTest")
-        user3 = User(name="BabyTest")
+        recipe1 = Recipe(name="Testghetti")
 
         db.session.add(user1)
-        db.session.add(user2)
-        db.session.add(user3)
         db.session.commit()
 
     def tearDown(self):
@@ -34,23 +34,17 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code, 200)
 
 class TestViews(TestBase):
+    def test_user(self):
+        response = self.client.get(url_for('user'))
+        self.assertEqual(response.status_code, 200)
+
+class TestViews(TestBase):
     def test_read(self):
         response = self.client.post(url_for('recipe'))
         self.assertIn(b'MsTest', response.data)
-
-class TestViews(TestBase):
-    def test_recipe(self):
-        response = self.client.post(url_for('recipe'))
-        self.assertIn(b'MsTest', response.data)
-
-
+        # self.assertIn(b'Testghetti', response.data)
 
 # class TestViews(TestBase):
-#     def test_recipe_post(self):
-#         response = self.client.post(url_for('recipe'))
-#         self.assertIn(b'RecipeX', response.data)
-
-# class TestViews(TestBase):
-#     def test_read_get(self):
-#         response = self.client.get(url_for('read'))
-#         self.assertEqual(response.status_code, 200)
+#     def test_update(self):
+#         response = self.client.post(url_for('update'))
+#         self.assertIn(b'Testghetti', response.data)
