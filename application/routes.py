@@ -39,7 +39,7 @@ def recipe():
 @app.route('/read', methods=['GET'])
 def read():
     users = User.query.all()
-    recipes = Recipe.query.all()
+    recipes = Recipe.query.order_by(Recipe.user_id).all()
 
     return render_template('read.html', users=users, recipes=recipes)
 
@@ -69,6 +69,7 @@ def delete(recipe):
 @app.route('/meal', methods=['GET'])
 def meal():
     recipes = random.choices(Recipe.query.all())
+
     
     return render_template('meal.html', recipes=recipes)   
 
