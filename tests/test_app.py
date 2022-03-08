@@ -18,9 +18,18 @@ class TestBase(TestCase):
         db.create_all()
 
         user1 = User(name="MsTest")
-        recipe1 = Recipe(name="Testghetti")
+        # recipe1 = Recipe(name="Testghetti")
+        # recipe2 = Recipe(name="Testeroni")
+        # recipe3 = Recipe(name="Testonara")
+        # recipe4 = Recipe(name="Testognese")
+        # recipe5 = Recipe(name="Testake")
 
         db.session.add(user1)
+        # db.session.add(recipe1)
+        # db.session.add(recipe2)
+        # db.session.add(recipe3)
+        # db.session.add(recipe4)
+        # db.session.add(recipe5)
         db.session.commit()
 
     def tearDown(self):
@@ -28,23 +37,16 @@ class TestBase(TestCase):
         db.drop_all()
 
 
-class TestViews(TestBase):
+class TestPages(TestBase):
     def test_home(self):
         response = self.client.get(url_for('home'))
         self.assertEqual(response.status_code, 200)
 
-class TestViews(TestBase):
     def test_user(self):
         response = self.client.get(url_for('user'))
         self.assertEqual(response.status_code, 200)
 
-class TestViews(TestBase):
     def test_read(self):
         response = self.client.post(url_for('recipe'))
         self.assertIn(b'MsTest', response.data)
         # self.assertIn(b'Testghetti', response.data)
-
-# class TestViews(TestBase):
-#     def test_update(self):
-#         response = self.client.post(url_for('update'))
-#         self.assertIn(b'Testghetti', response.data)
