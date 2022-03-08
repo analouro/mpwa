@@ -1,6 +1,4 @@
-from os import name
 import random
-from this import d
 from flask import redirect, render_template, request, url_for
 from application import app, db
 from application.forms import UserForm, RecipeForm, UpdateForm
