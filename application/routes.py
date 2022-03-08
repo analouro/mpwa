@@ -1,4 +1,6 @@
 from os import name
+import random
+from this import d
 from flask import redirect, render_template, request, url_for
 from application import app, db
 from application.forms import UserForm, RecipeForm, UpdateForm
@@ -37,7 +39,7 @@ def recipe():
 @app.route('/read', methods=['GET'])
 def read():
     users = User.query.all()
-    recipes = Recipe.query.all()
+    recipes = Recipe.query.order_by(Recipe.user_id).all()
 
     return render_template('read.html', users=users, recipes=recipes)
 
@@ -62,7 +64,14 @@ def delete(recipe):
     db.session.delete(recipe)
     db.session.commit()
     return redirect(url_for('read'))
-    
+
+
+@app.route('/meal', methods=['GET'])
+def meal():
+    meal = Recipe.query.all()
+    recipes = random.sample(meal, 5)
+
+    return render_template('meal.html', recipes=recipes)   
 
 
 
