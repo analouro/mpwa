@@ -68,9 +68,9 @@ def delete(recipe):
 
 @app.route('/meal', methods=['GET'])
 def meal():
-    recipes = random.choices(Recipe.query.all())
+    meal = Recipe.query.all()
+    recipes = random.sample(meal, 5)
 
-    
     return render_template('meal.html', recipes=recipes)   
 
 
