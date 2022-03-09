@@ -11,7 +11,7 @@ services:
 
   mysql:
     build: ./db
-    image: mysql
+    image: mysql:latest
     container_name: mpwa-mysql
     ports:
     - target: 3306
