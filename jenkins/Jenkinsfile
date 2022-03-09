@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+    stages {
+        stage('Setup') {
+            steps {
+                sh "jenkins/setup.sh"
+                //
+            }
+        }
+        stage('Test') {
+            steps {
+                sh "jenkins/test.sh"
+                //
+            }
+        }
+        stage('Build') {
+            steps {
+                sh "jenkins/build.sh"
+                //
+            }
+        }
+        stage('Push') {
+            steps {
+                sh "jenkins/push.sh"
+                //
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh "jenkins/deploy.sh"
+                //
+            }
+        }
+    }
+}
