@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Fetch Git Repository') {
             steps {
+                sh "chmod +x -R ${env.WORKSPACE}"
                 sh "rm -rf mpwa"
                 sh "git clone https://github.com/analouro/mpwa.git"
                 //
