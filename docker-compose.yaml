@@ -10,7 +10,6 @@ services:
 
   mysql:
     build: ./db
-    image: mysql
     ports:
     - target: 3306
       protocol: tcp
