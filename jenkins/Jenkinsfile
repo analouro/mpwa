@@ -1,6 +1,13 @@
 pipeline {
     agent any
     stages {
+        stage('Fetch Git Repository') {
+            steps {
+                sh "rm -rf mpwa"
+                sh "git clone https://github.com/analouro/mpwa.git"
+                //
+            }
+        }
         stage('Setup') {
             steps {
                 sh "jenkins/setup.sh"
