@@ -10,7 +10,7 @@ services:
 
   mysql:
     build: ./db
-    image: mpwa-pipeline_mysql
+    image: flask-app-mpwa:latest
     ports:
     - target: 3306
       protocol: tcp
