@@ -3,7 +3,6 @@ services:
   flask-app:
     build: ./flask-app
     image: ${DOCKER_HUB_CREDS_USR}/flask-app-mpwa:lastest
-    container_name: flask-app
     ports:
     - target: 5000
       published: 5000
