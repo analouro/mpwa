@@ -3,6 +3,7 @@ services:
   flask-app:
     build: ./flask-app
     image: ${DOCKER_HUB_CREDS_USR}/flask-app-mpwa:lastest
+    container_name: flask-app-mpwa
     ports:
     - target: 5000
       published: 5000
@@ -10,10 +11,13 @@ services:
 
   mysql:
     build: ./db
-    image: flask-app-mpwa:latest
+    image: mysql
+    container_name: mpwa-mysql
     ports:
     - target: 3306
       protocol: tcp
+    environment:
+       MYSQL_ROOT_PASSWORD: "password123"
 
 volumes:
    flask-app:
