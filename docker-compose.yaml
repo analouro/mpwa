@@ -10,6 +10,7 @@ services:
 
   mysql:
     build: ./db
+    image: mpwa-pipeline_mysql
     ports:
     - target: 3306
       protocol: tcp
