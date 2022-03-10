@@ -1,6 +1,6 @@
 from application import app
-# from application import db
-# from application.models import User, Recipe 
+from application import db
+from application.models import User, Recipe 
 
 # db.drop_all()
 # db.create_all()
