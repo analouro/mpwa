@@ -2,7 +2,7 @@ version: "3.8"
 services:
   flask-app:
     build: ./flask-app
-    image: ${DOCKER_HUB_CREDS_USR}/flask-app-mpwa:lastest
+    image: ${DOCKER_HUB_CREDS_USR}/flask-app-mpwa:latest
     container_name: flask-app-mpwa
     ports:
     - target: 5000
