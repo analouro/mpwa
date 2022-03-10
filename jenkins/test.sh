@@ -13,4 +13,5 @@ cd flask-app
 pip3 install -r requirements.txt
 
 # run pytest
+python3 -m pytest --cov
 python3 -m pytest --cov-report term-missing
