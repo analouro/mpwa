@@ -3,4 +3,4 @@
 echo "Push stage"
 
 # push to docker hub
-docker-compose push
+docker push analouro/flask-app-mpwa:latest
