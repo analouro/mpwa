@@ -8,6 +8,6 @@ db = SQLAlchemy(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password123@mysql:3306/app-db'
 
 SECRET_KEY = os.urandom(32)
-app.config["SECRET_KEY"] = SECRET_KEY
+app.config['SECRET_KEY'] = SECRET_KEY
 
 from application import routes

@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
         DOCKER_HUB_CREDS = credentials("DOCKER_HUB_CREDS")
-        DATABASE_URI = credentials("DATABASE_URI")
+        DATABASE_URI = credentials('SQLALCHEMY_DATABASE_URI')
     }
     stages {
         stage('Fetch Git Repository') {
