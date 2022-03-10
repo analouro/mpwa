@@ -8,6 +8,9 @@ services:
     - target: 5000
       published: 5000
       protocol: tcp
+    environment: 
+       DATABASE_URI: "mysql+pymysql://root:password123@mysql:3306/app-db"
+
 
   mysql:
     build: ./db
@@ -16,8 +19,13 @@ services:
     ports:
     - target: 3306
       protocol: tcp
-    environment:
+    environment: 
        MYSQL_ROOT_PASSWORD: "password123"
+       MYSQL_DATABASE: app-db
+    volumes:
+    - type: volume
+      source: flask-app
+      target: /var/lib/mysql
 
 volumes:
    flask-app:
