@@ -18,6 +18,7 @@ class TestBase(TestCase):
         db.create_all()
 
         user1 = User(name="MsTest")
+        # I need to pass 2 bits of information for the recipe to be read: recipe name and user_id
         # recipe1 = Recipe(name="Testghetti")
         # recipe2 = Recipe(name="Testeroni")
         # recipe3 = Recipe(name="Testonara")
