@@ -13,4 +13,6 @@ class Recipe(db.Model):
     # recipe_servs = db.Column(db.Integer, nullable=True)
     # recipe_guide = db.Column(db.String(2000), nullable=True)
 
+db.create_all()
+
 
