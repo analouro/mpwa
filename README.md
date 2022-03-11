@@ -13,12 +13,12 @@
    * [Testing](#testing)
 * [Technologies](#technologies)
 * [The Project](#theproject)
-* [Project Tracking](#project tracking)
+* [Project Tracking](#project-tracking)
 * [Structure](#structure)
 * [Testing](#testing)
-* [Risk Assessment](#risk assessment)
+* [Risk Assessment](#risk-assessment)
 * [Issues](#bugs)
-* [Future Improvements](#future improvements)
+* [Future Improvements](#future-improvements)
 * [Author](#author)
 
 ## Brief
