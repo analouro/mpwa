@@ -83,19 +83,31 @@ The one-to-many relationship allows each user to add several recipes, but each r
 * CI/CD Pipeline:
 
 **CI (Continuous Integration):** Enables constant update and testing of code.
-  * In this project the Project Tracking Tool was integrated into GitHub, however, the commands were not functioning correctly, therefore the Project Tracking Tool was used manually (which isn't ideal and is something that needs to be corrected in the future).
-  * GitHub was used as the code repository - new branches were created for each sprint ("MPWA-3" (deleted from GitHub) to develop user stories related to the user, "MPWA-4" to develop user stories related to recipes, "unit-tests" to develop unit-tests).
+  * In this project the Project Tracking Tool was integrated into GitHub, however, the commands were not functioning correctly, therefore the Project Tracking Tool was used manually (which isn't ideal and is something that needs to be corrected in the future);
+  * The code was written using an Azure VM;
+  * GitHub was used as the code repository - new branches were created for each sprint ("MPWA-3" (deleted from GitHub) to develop user stories related to the user, "MPWA-4" to develop user stories related to recipes, "unit-tests" to develop unit-tests);
   * CI Server: Jenkins was used to build and test the code created - this was achieved by writing a Jenkins pipeline job with separate stages (scripts):
     1. Declarative: Checkout SCM
     2. Fetch Git Repository
     3. Setup
     4. Test
     5. Build
+    6. Push
+  * Images: Docker/Docker Compose was used to build the application image;
+  * Image Repository: In this project the images created were pushed to Docker Hub;
+  * Artifact Repository: Jenkins was used as the artifact repository.
+
+**CD (Continuous Deployment):** Enables the release of features in an automated way, requiring no human interaction for new application features to end up in the customer's hand.
+  * In this project the Jenkins pipeline used for the CI stages was also used for the CD deployment stage;
+  * Docker Swarm was then used to deploy the application hosted in the (Azure) Cloud. 
   
+<img width="675" alt="Jenkins - Pipeline" src="https://user-images.githubusercontent.com/97620020/157850868-af52bfa7-4f04-4289-8319-627602e77751.png">
+
+* CD/CD Diagaram:
+
+![CI_CD_Pipeline_Diagram](https://user-images.githubusercontent.com/97620020/157868071-a01536b4-a860-4ab6-b999-4fdafcb5c4e7.png)
 
 
-
---insert image--
 
 
 
