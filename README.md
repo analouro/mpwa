@@ -93,7 +93,7 @@ In the backlog 6 epics were created considering different stages of the project:
 
 ## Structure
 
-* Database:
+**Database:**
 The database has two tables (User and Recipe) that form a one-to-many relationship.
 The one-to-many relationship allows each user to add several recipes, but each recipe belongs only to one user.
 
@@ -101,7 +101,6 @@ The one-to-many relationship allows each user to add several recipes, but each r
 
 ![mysql - user and recipe table](https://user-images.githubusercontent.com/97620020/157757024-fac5ff09-6c26-4ff6-9a4b-5c6bb722bfaf.png)
 
-* Infrastructure + CI/CD Pipeline:
 
 **Infrastructure + CI (Continuous Integration):** Enables constant update and testing of code.
   * In this project the Project Tracking Tool was integrated into GitHub, however, the commands were not functioning correctly, therefore the Project Tracking Tool was used manually (which isn't ideal and is something that needs to be corrected in the future);
