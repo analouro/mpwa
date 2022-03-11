@@ -101,6 +101,9 @@ The one-to-many relationship allows each user to add several recipes, but each r
 
 ![mysql - user and recipe table](https://user-images.githubusercontent.com/97620020/157757024-fac5ff09-6c26-4ff6-9a4b-5c6bb722bfaf.png)
 
+The flask application will communicate with a MySQL container as a database, here is a diagram showing this connection:
+
+![image](https://user-images.githubusercontent.com/97620020/157879369-86588756-ffd6-4c79-bf8c-95f3909a63fd.png)
 
 **Infrastructure + CI (Continuous Integration):** Enables constant update and testing of code.
   * In this project the Project Tracking Tool was integrated into GitHub, however, the commands were not functioning correctly, therefore the Project Tracking Tool was used manually (which isn't ideal and is something that needs to be corrected in the future);
