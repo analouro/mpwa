@@ -4,6 +4,7 @@
 * Demo Video - M.E.A.L. - Meal Planning App: https://drive.google.com/file/d/1C-PNlIIp3dUqBgtgkEwMfYz5DEnzWZqc/view?usp=sharing
 * MoSCoW file: https://github.com/analouro/mpwa/blob/824f26c192371ae5e9a04681b25a5d7bf86c1ad7/moscow.txt
 * Entity Relationship Diagram (ERD): https://github.com/analouro/mpwa/blob/824f26c192371ae5e9a04681b25a5d7bf86c1ad7/MPWA-ERD.drawio
+* Application and Database Diagram: https://github.com/analouro/mpwa/blob/01557ee83a6d5230cb50214541e156dae057e2c0/App_DB_diagram.drawio
 * Infrastructure + CI/CD Pipeline: https://github.com/analouro/mpwa/blob/354f3ff7d57e2e698c4dc23bca678696b9dcc056/CI/CD%20Pipeline%20Diagram.drawio
 
 ## Contents
